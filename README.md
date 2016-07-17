@@ -15,7 +15,10 @@ You'll get shell/ispy-shell.dylib. When injected into an app, it sets up a Hush 
 BusyBox v1.20.0.git (2016-07-13 14:19:16 MDT) hush - the humble shell
 Enter 'help' for a list of built-in commands.
 
-/ $
+/ $ id
+uid=501(mobile) gid=501(mobile) groups=501(mobile)
+/ $ cd $HOME
+/private/var/mobile/Containers/Data/Application/DAFC69C4-A9B1-45FD-A954-6CCF067FB620 $
 ```
 
 The rest of this README is the one that comes with BusyBox.
