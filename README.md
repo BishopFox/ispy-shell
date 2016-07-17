@@ -23,6 +23,10 @@ uid=501(mobile) gid=501(mobile) groups=501(mobile)
 /private/var/mobile/Containers/Data/Application/DAFC69C4-A9B1-45FD-A954-6CCF067FB620 $
 ```
 
+The shell is fairly functional, but on jailed devices you're subject to limitations of the iOS kernel sandbox. This means you can't execve(2) or fork(2), which means you can't run any commands, you don't get pipes, redirection, etc. You do get all the common unix commands in a Bash-like shell.
+
+At the moment any attempt to run a non-builtin command will cause a crash. A fix is TBD!
+
 The rest of this README is the one that comes with BusyBox.
 
 README
