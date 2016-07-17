@@ -10,7 +10,7 @@ or
 > make ARCH=arm64
 ```
 
-You'll get `shell/ispy-shell.dylib` that you can inject into an app using theos-jailed, CydiaSubstrate, etc. The dylib's constructor sets up a Hush shell bound to port 8765/TCP on the iDevice. It has a controlling TTY. To connect to it, use something like socat:
+You'll get `shell/ispy-shell.dylib` that you can inject into an app using [theos-jailed](https://github.com/BishopFox/theos-jailed), [CydiaSubstrate](http://www.cydiasubstrate.com/), etc. The dylib's constructor sets up a Hush shell bound to port 8765/TCP on the iDevice. It has a controlling TTY. To connect to it, use something like socat:
 
 ```
 > socat tcp-connect:<your_idevice_ip>:8765 file:`tty`,raw,echo=0
@@ -26,6 +26,8 @@ uid=501(mobile) gid=501(mobile) groups=501(mobile)
 The shell is fairly functional, but on jailed devices you're subject to limitations of the iOS kernel sandbox. This means you can't execve(2) or fork(2), which means you can't run any commands, you don't get pipes, redirection, etc. You do get all the common unix commands in a Bash-like shell.
 
 At the moment any attempt to run a non-builtin command will cause a crash. A fix is TBD! Most new code is located in `shell/ispy-shell.c`.
+
+For more information on injecting this dylib onto jailed devices, see this blog post: https://www.bishopfox.com/blog/2015/02/rethinking-repackaging-ios-apps-part-1/
 
 The rest of this README is the one that comes with BusyBox.
 
