@@ -1,5 +1,7 @@
 
-BusyBox for iOS, jailed or jailbroken. To compile: 
+BusyBox for iOS, jailed or jailbroken.
+--------------------------------------
+To build: 
 
 ```
 > brew install gnu-sed
@@ -22,6 +24,8 @@ uid=501(mobile) gid=501(mobile) groups=501(mobile)
 ```
 
 The rest of this README is the one that comes with BusyBox.
+
+README
 ----
 Please see the LICENSE file for details on copying and usage.
 Please refer to the INSTALL file for instructions on how to build.
