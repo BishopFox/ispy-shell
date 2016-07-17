@@ -8,7 +8,7 @@ or
 > make ARCH=arm64
 ```
 
-You'll get shell/ispy-shell.dylib. When injected into an app, it sets up a Hush shell bound to port 8765/TCP on the iDevice. To connect to it, try:
+You'll get shell/ispy-shell.dylib. When injected into an app, it sets up a Hush shell bound to port 8765/TCP on the iDevice. It has a controlling TTY. To connect to it, use something like socat:
 
 ```
 > socat tcp-connect:<your_idevice_ip>:8765 file:`tty`,raw,echo=0
