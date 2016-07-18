@@ -17,8 +17,36 @@ You'll get `shell/ispy-shell.dylib` that you can inject into an app using [theos
 BusyBox v1.20.0.git (2016-07-13 14:19:16 MDT) hush - the humble shell
 Enter 'help' for a list of built-in commands.
 
+/ $ uname -a
+Darwin iPhwn 15.5.0 Darwin Kernel Version 15.5.0: Mon Apr 18 16:44:06 PDT 2016; root:xnu-3248.50.21~4/RELEASE_ARM64_T7000 iPhone7,2 GNU/Linux
+/ $
 / $ id
-uid=501(mobile) gid=501(mobile) groups=501(mobile)
+uid=501(mobile) gid=501(mobile) groups=501(mobile),299(systemusers)
+/ $
+/ $ cat /etc/passwd
+##
+# User Database
+#
+# This file is the authoritative user database.
+##
+nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false
+root:xxxxxxxxxxxxx:0:0:System Administrator:/var/root:/bin/sh
+mobile:xxxxxxxxxxxxx:501:501:Mobile User:/var/mobile:/bin/sh
+daemon:*:1:1:System Services:/var/root:/usr/bin/false
+_ftp:*:98:-2:FTP Daemon:/var/empty:/usr/bin/false
+_networkd:*:24:24:Network Services:/var/networkd:/usr/bin/false
+_wireless:*:25:25:Wireless Services:/var/wireless:/usr/bin/false
+_installd:*:33:33:Install Daemon:/var/installd:/usr/bin/false
+_neagent:*:34:34:NEAgent:/var/empty:/usr/bin/false
+_ifccd:*:35:35:ifccd:/var/empty:/usr/bin/false
+_securityd:*:64:64:securityd:/var/empty:/usr/bin/false
+_mdnsresponder:*:65:65:mDNSResponder:/var/empty:/usr/bin/false
+_sshd:*:75:75:sshd Privilege separation:/var/empty:/usr/bin/false
+_unknown:*:99:99:Unknown User:/var/empty:/usr/bin/false
+_distnote:*:241:241:Distributed Notifications:/var/empty:/usr/bin/false
+_astris:*:245:245:Astris Services:/var/db/astris:/usr/bin/false
+_ondemand:*:249:249:On Demand Resource Daemon:/var/db/ondemand:/usr/bin/false
+/ $
 / $ cd $HOME
 /private/var/mobile/Containers/Data/Application/DAFC69C4-A9B1-45FD-A954-6CCF067FB620 $
 ```
